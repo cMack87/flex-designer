@@ -1,0 +1,122 @@
+* {
+  box-sizing:border-box;
+}
+
+html, body, .container {
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  font-family:Helvetica, Tahoma, Arial;
+}
+
+.container {
+  display:flex;
+  background:#fff;
+}
+
+.cell {
+  border-collapse:collapse;
+  display:flex;
+  flex:1;
+  flex-grow:1;
+  position:relative;
+  transition: all 0.5s;
+  background:rgba(0,0,0,0.1);
+}
+
+[data-direction='row'] {
+  flex-direction:row;
+}
+
+[data-direction='column'] {
+  flex-direction:column;
+}
+
+.cell.top {
+  background:rgba(0,0,0,0.1);
+  border:1px solid rgba(0,0,0,0.5);
+}
+
+.cellSize {
+  content: attr(data-size);
+}
+
+/*
+.cell::after {
+  content: 'fiseugfewiufw ifuwtfiuw fiw fiweiu f weiuf eiuwfiu we ifuwe iufewuf iewuf uiewfiuwe iufewuf iuewf iuwef wiugte fiuewt fiewuf iwegfweugf ewiufetwifuetwifu wefuyew fiuewy fiewuyf eiwuf weifu ewifuyewi ufewfeiwuf weuyf eiwuyf iewuyfieufy eiwufy ewiufy ewiufy ewiufyewiufyew ifuyew ifuyew fiuewy fiuwey fiuweyf iweuyf iweuyf ieuwyf iweuyf iweuyf ewiufy weiufy iweuyf iweuyf iewuyf iewuyf iweuyf iuewyf ieuwyf weiuyf ewiufy ewiufy eiwuyf iewuyf iewft uewtdf uwehfjg cdskjhv owiefyu gwejhd hsagfd jwekfjgiweuft uwedfhjk wevuyiidusyfg jhdshkcwyu icwyegdh qkw yfiwqugd wkjvgjhwegfkeu fsiuefe qiuq ydiuqtwf iqwfd iquft qwiuf tqwifut qiwuft qwiuft qwifut wqiuft qwifu '
+}
+*/
+
+.cell:not(.top) > .controls {
+  display:none;
+}
+
+.controls {
+  position:absolute;
+  text-align:center;
+  width:100%;
+  height:2.4em;
+  top:50%;
+  margin-top:-1.2em;
+  z-index:1000;
+}
+
+.controls a, .control {
+  width:2em;
+  height:2em;
+  border-radius:50%;
+  background:#fff;
+  display:inline-block;
+  color:#333;
+  text-decoration:none;
+  transition:all 0.2s;
+  margin-bottom:5px;
+  text-align:center;
+  padding-top:0.5em;
+  box-shadow:0 0.15em 0.3em rgba(0,0,0,0.5);
+}
+
+.controls a:last-child {
+  margin:0;
+}
+
+.controls a:hover {
+  background:rgba(50,150,0,0.5);
+}
+
+.controls a:hover i {
+  color:#fff;
+}
+
+.controls a i {
+  -webkit-transition:all 0.5s;
+  pointer-events: none;
+}
+
+[data-direction='row'] .vertical {
+  display:none;
+}
+
+[data-direction='row'] .horizontal {
+  display:block;
+}
+
+[data-direction='column'] .horizontal {
+  display:none;
+}
+
+[data-direction='column'] .vertical {
+  display:block;
+}
+
+[data-action="show-json"] {
+  position:absolute;
+  top:5px;
+  right:5px;
+}
+
+
+
+
+
